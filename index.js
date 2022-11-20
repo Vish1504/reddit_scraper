@@ -9,8 +9,12 @@ const puppeteer=require('puppeteer');
         const lists=[];
         search_results.forEach(elements => {
             const votes=elements.querySelector("._23h0-EcaBUorIHC-JZyh6J  ._1E9mcoVn4MYnuBQSVDt1gC ._1rZYMD_4xY3gRcSS3p8ODO._3a2ZHWaih05DgAOtvu6cIo");
-            const question=elements.querySelector("h3");
 
+            const question=elements.querySelector("h3");
+            if(votes.innerText=='Vote')
+                {
+                    votes.innerText='0'
+                }
             lists.push({
                 vote_count:votes.innerText
                 ,question_main:question.innerText
