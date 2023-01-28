@@ -10,6 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^19.2.2"
-  }
+    "puppeteer": "^19.2.2",
+    "puppeteer-core": "^19.2.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vish1504/reddit_scraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vish1504/reddit_scraper/issues"
+  },
+  "homepage": "https://github.com/Vish1504/reddit_scraper#readme"
 }
