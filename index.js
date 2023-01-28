@@ -1,4 +1,6 @@
 const puppeteer=require('puppeteer');
+const json2csv=require("json2csv").Parser;
+const fs=require("fs");
 
 (async()=>{
     const browser=await puppeteer.launch();
@@ -24,7 +26,12 @@ const puppeteer=require('puppeteer');
         return lists;
 
     })
-    console.log(search);
+    // console.log(search);
+    
     await browser.close();
+    const j2cp=new json2csv();
+    const csv=j2cp.parse(search);
+
+    fs.writeFileSync("./reddit.csv",csv,"utf-8");
 })()
 console.log("END");

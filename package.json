@@ -10,10 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "json2csv": "^6.0.0-alpha.2",
     "puppeteer": "^19.2.2",
     "puppeteer-core": "^19.2.2"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vish1504/reddit_scraper.git"
