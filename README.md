@@ -26,7 +26,7 @@ This function navigates to the subreddit and scrapes the top posts. It returns a
 This function takes an array of objects as input and saves it to a CSV file named after the subreddit. The CSV file will have three columns: "Title", "Score", and "Comments".
 
 
-****Output****
+**Output**
 The script will output a CSV file with the following columns:
 
 Title: The title of the post
