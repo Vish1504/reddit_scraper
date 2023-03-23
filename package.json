@@ -1,5 +1,5 @@
 {
-  "name": "hackerrank_auto",
+  "name": "reddit_scraper",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,16 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csv-writer": "^1.6.0",
     "json2csv": "^6.0.0-alpha.2",
-    "puppeteer": "^19.2.2",
-    "puppeteer-core": "^19.2.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Vish1504/reddit_scraper.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Vish1504/reddit_scraper/issues"
-  },
-  "homepage": "https://github.com/Vish1504/reddit_scraper#readme"
+    "objects-to-csv": "^1.3.6",
+    "puppeteer": "^19.7.5"
+  }
 }
