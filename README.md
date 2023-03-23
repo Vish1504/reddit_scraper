@@ -25,6 +25,6 @@ saveToCsv(data) : This function takes an array of objects as input and saves it 
 
 The script will output a CSV file with the following columns:
 
-Title: The title of the post
-Score: The number of votes on the post
+Title: The title of the post, 
+Score: The number of votes on the post,
 Comments: The number of comments on the post
