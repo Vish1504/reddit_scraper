@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Subreddit Scraper Form</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                /* background-color: #f2f2f2; */
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 50px;
+            }
+
+            form {
+                width: 50%;
+                margin: auto auto;
+                /* background-color: #fff; */
+                background-color: #f2f2f2;
+                padding: 40px;
+                border-radius: 9px;
+                /* border: 1px black solid; */
+                text-align: center;
+                /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+            }
+
+            label {
+                display: block;
+                /* margin-bottom: 1px; */
+                font-weight: bold;
+                padding: 10px;
+            }
+
+            input[type="text"],
+            input[type="number"] {
+                width: 50%;
+                padding: 10px;
+                margin-bottom: 40px;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+
+            input[type="submit"] {
+                background-color: deepskyblue;
+                border: none;
+                border-radius: 10px;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
+
+            input[type="submit"]:hover {
+                background-color: rgba(0, 191, 255, 0.775);
+            }
+
+            input[type="submit"]:active {
+                background-color: #f2f2f2;
+                border: 2px deepskyblue solid;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 15px;
+                color: deepskyblue;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Reddit Scraper</h1>
+        <form action="/scrape" method="POST">
+            <div class="inputContainer">
+                <label for="subreddit">Enter subreddit:</label>
+                <input type="text" id="subreddit" name="subreddit" required>
+                <!-- <br> -->
+                <label for="num">Enter the number of records to be scraped:</label>
+                <input type="number" id="num" name="num" required>
+                <!-- <br><br> -->
+                <br>
+                <input type="submit" value="Scrape">
+            </div>
+        </form>
+    </body>
+
+</html>
