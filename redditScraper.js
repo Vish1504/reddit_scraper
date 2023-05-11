@@ -1,16 +1,15 @@
 const puppeteer = require('puppeteer');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const subreddit = 'node';
-const scrapeReddit = async () => {
 
-    const browser = await puppeteer.launch();
+const scrapeReddit = async (subreddit, num) => {
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     await page.goto(`https://www.reddit.com/r/${subreddit}/`);
 
     let results = [];
     let count = 0;
 
-    while (results.length < 100) {
+    while (results.length < num) {
         const elements = await page.$$('._1oQyIsiPHYt6nx7VOmd1sz._1RYN-7H8gYctjOQeL8p2Q7.scrollerItem._3Qkp11fjcAw9I9wtLo8frE._1qftyZQ2bhqP62lbPjoGAh');
         for (const element of elements) {
             const title = await element.$eval('h3', (node) => node.innerText.trim());
@@ -25,11 +24,11 @@ const scrapeReddit = async () => {
                 });
             }
             count++;
-            if (results.length >= 100 || count >= 100) {
+            if (results.length >= num || count >= num) {
                 break;
             }
         }
-        if (results.length >= 100 || count >= 100) {
+        if (results.length >= num || count >= num) {
             break;
         }
         const lastElement = elements[elements.length - 1];
@@ -41,7 +40,7 @@ const scrapeReddit = async () => {
     return results;
 };
 
-const saveToCsv = async (data) => {
+const saveToCsv = async (data, subreddit) => {
     const csvWriter = createCsvWriter({
         path: `${subreddit}.csv`,
         header: [
@@ -50,12 +49,11 @@ const saveToCsv = async (data) => {
             { id: 'comments', title: 'Comments' },
         ],
     });
-
     await csvWriter.writeRecords(data);
 };
 
-(async () => {
-    const results = await scrapeReddit();
-    await saveToCsv(results);
-    console.log('Data scraped and saved to csv!');
-})();
+
+module.exports = {
+    scrapeReddit,
+    saveToCsv,
+};
