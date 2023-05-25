@@ -4,6 +4,11 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const scrapeReddit = async (subreddit, num) => {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
+    const navigationTimeout = 60000; // Timeout duration in milliseconds
+
+// Set the default navigation timeout
+await page.setDefaultNavigationTimeout(navigationTimeout);
+
     await page.goto(`https://www.reddit.com/r/${subreddit}/`);
 
     let results = [];
